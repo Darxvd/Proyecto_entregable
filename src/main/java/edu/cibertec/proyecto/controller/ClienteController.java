@@ -3,6 +3,7 @@ package edu.cibertec.proyecto.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,12 +19,13 @@ import edu.cibertec.proyecto.service.ClienteService;
 
 @RestController
 @RequestMapping("/cliente")
+@CrossOrigin("http://localhost:4200/")
 public class ClienteController {
 
 	@Autowired
 	private ClienteService servicioCliente;
 	
-	@GetMapping(value = {"","/"})
+	@GetMapping("/listar")
 	public List<Cliente> listarCliente(){
 		return servicioCliente.listarCliente();
 	}
@@ -39,17 +41,14 @@ public class ClienteController {
 		return servicioCliente.obtenerCli(idcli);
 	}
 	
-	@PutMapping("/actualizar/{id}")
+	@PutMapping("/actualizar")
 	@ResponseBody
-	public Cliente actualizar(@PathVariable int id, @RequestBody Cliente cliente) {
-		Cliente tmpCliente = servicioCliente.obtenerCli(id);
+	public Cliente actualizar(@RequestBody Cliente cliente) {
+		Cliente tmpCliente = servicioCliente.obtenerCli(cliente.getId_cliente());
 		tmpCliente.setNoap_cliente(cliente.getNoap_cliente());
-		tmpCliente.setEdad_cliente(cliente.getEdad_cliente());
-		tmpCliente.setObjSexo(cliente.getObjSexo());
 		tmpCliente.setDni_cliente(cliente.getDni_cliente());
-		tmpCliente.setDir_cliente(cliente.getDir_cliente());
 		tmpCliente.setTlf_cliente(cliente.getTlf_cliente());
-		return servicioCliente.registrar(tmpCliente);
+		return servicioCliente.actualizar(tmpCliente);
 	}
 	
 	@DeleteMapping("/eliminar/{id}")

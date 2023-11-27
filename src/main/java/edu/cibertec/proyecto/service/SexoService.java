@@ -6,5 +6,4 @@ import edu.cibertec.proyecto.entity.Sexo;
 
 public interface SexoService {
 	public List<Sexo>listarSexo();
-
 }

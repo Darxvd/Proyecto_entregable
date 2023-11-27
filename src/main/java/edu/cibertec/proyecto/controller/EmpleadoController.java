@@ -47,10 +47,10 @@ public class EmpleadoController {
 		tmpEmpleado.setNom_empleado(empleado.getNom_empleado());
 		tmpEmpleado.setApl_empleado(empleado.getApl_empleado());
 		tmpEmpleado.setEdad_empleado(empleado.getEdad_empleado());
-		tmpEmpleado.setObjSexo(empleado.getObjSexo());
+		tmpEmpleado.setId_sexo(empleado.getId_sexo());
 		tmpEmpleado.setDni_empleado(empleado.getDni_empleado());
 		tmpEmpleado.setDir_empleado(empleado.getDir_empleado());
-		tmpEmpleado.setObjCargo(empleado.getObjCargo());
+		tmpEmpleado.setId_cargo(empleado.getId_cargo());
 		return servicioEmpleado.actualizar(tmpEmpleado);
 	}
 	

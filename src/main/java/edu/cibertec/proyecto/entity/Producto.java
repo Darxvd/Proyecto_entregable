@@ -13,27 +13,19 @@ import lombok.Data;
 @Table(name="tb_producto")
 public class Producto {
 	@Id
-	private int id_prod;
-	
-	@Column(name="nom_prod")
-	private String nom_prod;
-	@Column(name="des_prod")
-    private String des_prod;
-	@Column(name="pre_prod")
-    private Double pre_prod;
-	@Column(name="fcr_prod")
-    private String fcr_prod;
-	@Column(name="fpv_prod")
-    private String fpv_prod;
-	@Column(name="cant_prod")
-    private int cant_prod;
+	private int id_producto;
+    private String des_producto;
+    private Double pre_producto;
+    private int stk_producto;
+    private int id_categoria;
+    private int id_proveedor;
     
     @ManyToOne
-    @JoinColumn(name = "id_categoria")
+    @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
     private Categoria objcategoria;
     
     @ManyToOne
-    @JoinColumn(name = "id_proveedor")
+    @JoinColumn(name = "id_proveedor", insertable = false, updatable = false)
     private Proveedor objProveedor;
 
 

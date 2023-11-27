@@ -3,6 +3,7 @@ package edu.cibertec.proyecto.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,12 +18,13 @@ import edu.cibertec.proyecto.service.ProductoService;
 
 @RestController
 @RequestMapping("/producto")
+@CrossOrigin("http://localhost:4200")
 public class ProductoController {
 
 	@Autowired
 	private ProductoService servicioProducto;
 	
-	@GetMapping(value= {"","/"})
+	@GetMapping("/listar")
 	public List<Producto> listarProducto(){
 		return servicioProducto.listarProducto();
 	}
@@ -38,18 +40,15 @@ public class ProductoController {
 		return servicioProducto.obtenerProd(idprod);
 	}
 	
-	@PutMapping("/actualizar/{id}")
+	@PutMapping("/actualizar")
 	@ResponseBody
-	public Producto actualizar(@PathVariable int id, @RequestBody Producto producto) {
-		Producto tmpProducto = servicioProducto.obtenerProd(id);
-		tmpProducto.setNom_prod(producto.getNom_prod());
-		tmpProducto.setDes_prod(producto.getDes_prod());
-		tmpProducto.setPre_prod(producto.getPre_prod());
-		tmpProducto.setFcr_prod(producto.getFcr_prod());
-		tmpProducto.setFpv_prod(producto.getFpv_prod());
-		tmpProducto.setCant_prod(producto.getCant_prod());
-		tmpProducto.setObjcategoria(producto.getObjcategoria());
-		tmpProducto.setObjProveedor(producto.getObjProveedor());
+	public Producto actualizar(@RequestBody Producto producto) {
+		Producto tmpProducto = servicioProducto.obtenerProd(producto.getId_producto());
+		tmpProducto.setDes_producto(producto.getDes_producto());
+		tmpProducto.setPre_producto(producto.getPre_producto());
+		tmpProducto.setStk_producto(producto.getStk_producto());
+		tmpProducto.setId_categoria(producto.getId_categoria());
+		tmpProducto.setId_proveedor(producto.getId_proveedor());
 		return servicioProducto.actualizar(tmpProducto);
 	}
 	
