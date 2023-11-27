@@ -19,7 +19,6 @@ import edu.cibertec.proyecto.service.ClienteService;
 
 @RestController
 @RequestMapping("/cliente")
-@CrossOrigin("http://localhost:4200/")
 public class ClienteController {
 
 	@Autowired

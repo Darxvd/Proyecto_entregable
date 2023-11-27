@@ -18,7 +18,6 @@ import edu.cibertec.proyecto.service.ProductoService;
 
 @RestController
 @RequestMapping("/producto")
-@CrossOrigin("http://localhost:4200")
 public class ProductoController {
 
 	@Autowired

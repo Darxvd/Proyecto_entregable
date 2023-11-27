@@ -3,24 +3,23 @@ package edu.cibertec.proyecto.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import edu.cibertec.proyecto.entity.Categoria;
-import edu.cibertec.proyecto.service.CategoriaService;
+import edu.cibertec.proyecto.entity.Cargo;
+import edu.cibertec.proyecto.service.CargoService;
 
 @RestController
-@RequestMapping("/categoria")
-public class CategoriaController {
+@RequestMapping("/cargo")
+public class CargoController {
 	
 	@Autowired
-	private CategoriaService servicioCategoria;
+	private CargoService servicioCargo;
 	
 	@GetMapping("/listar")
-	public List<Categoria> listarCategoria(){
-		return servicioCategoria.listarCategoria();
+	public List<Cargo> listarCargos(){
+		return servicioCargo.listarCargo();
 	}
 
 }

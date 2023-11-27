@@ -19,7 +19,6 @@ import edu.cibertec.proyecto.service.EmpleadoService;
 
 @RestController
 @RequestMapping("/empleado")
-@CrossOrigin("http://localhost:4200")
 public class EmpleadoController {
 	@Autowired
 	private EmpleadoService servicioEmpleado;
