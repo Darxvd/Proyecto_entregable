@@ -1,0 +1,102 @@
+create database bd_proyecto;
+
+use bd_proyecto;
+
+create table tb_sexo(
+	id_sexo int not null primary key auto_increment,
+    nom_sexo varchar(200)
+);
+
+create table tb_cargo(
+	id_cargo int not null primary key auto_increment,
+    nom_cargo varchar(30)
+); 
+
+create table tb_empleado(
+	id_empleado int not null primary key auto_increment,
+    nom_empleado varchar(200) not null,
+    apl_empleado varchar(200) not null,
+    edad_empleado int not null,
+    id_sexo int not null,
+    dni_empleado varchar(8) not null,
+    dir_empleado varchar(20) not null,
+    id_cargo int not null,
+    foreign key(id_sexo) references tb_sexo(id_sexo),
+    foreign key(id_cargo) references tb_cargo(id_cargo)
+);
+
+create table tb_cliente(
+	id_cliente int not null primary key auto_increment,
+    noap_cliente varchar(300) not null,
+    dni_cliente varchar(8) not null,
+    tlf_cliente char(9) not null
+);
+
+create table tb_proveedor(
+	id_proveedor int not null primary key auto_increment,
+    nom_proveedor varchar(50) not null
+);
+
+create table tb_categoria(
+	id_categoria int not null primary key auto_increment,
+    nom_categoria varchar(50)
+);
+
+
+
+create table tb_producto(
+	id_producto int not null primary key auto_increment,
+    des_producto varchar(50) not null,
+    pre_producto decimal(10,2) not null,
+	stk_producto int not null,
+    id_categoria int not null,
+    id_proveedor int not null,
+    foreign key(id_categoria) references tb_categoria(id_categoria),
+    foreign key(id_proveedor) references tb_proveedor(id_proveedor)
+);
+
+insert into tb_producto values(null, 'Laptop Gamer xrl-30', 2598.30, 20, 1,1);
+
+select * from tb_producto;
+
+insert into tb_sexo values(null, 'Masculino'),
+						  (null, 'Femenino');
+                          
+insert into tb_cargo values(null, 'Jefe'),
+						   (null, 'Supervisor'),
+						   (null, 'Administrador'),
+                           (null, 'Empleado');
+                           
+insert into tb_categoria values(null, 'Laptop'),
+							   (null, 'Celular'),
+							   (null, 'Teclado'),
+                               (null, 'Monitor'),
+                               (null, 'Mouse'),
+                               (null, 'Tablet'),
+                               (null, 'Repetidor');
+
+INSERT INTO tb_cliente (noap_cliente, dni_cliente, tlf_cliente) VALUES
+('Juan Pérez', '12345678', '912345678'),
+('María Gómez', '87654321', '923456789'),
+('Carlos Rodríguez', '98765432', '934567890'),
+('Ana Martínez', '23456789', '945678901');
+
+insert into tb_proveedor values(null, 'Samsung'),
+							   (null, 'Lg'),
+                               (null, 'Dell'),
+                               (null, 'Hp'),
+                               (null, 'Xiaomi'),
+                               (null, 'Huawei'),
+                               (null, 'Apple');
+
+
+insert into tb_empleado 
+(nom_empleado, apl_empleado, edad_empleado, id_sexo, dni_empleado, dir_empleado, id_cargo) 
+values 
+('Juan', 'Pérez', 30, 1, '12345678', 'Calle A #123', 1),
+('María', 'Gómez', 25, 2, '87654321', 'Avenida B #456', 2),
+('Carlos', 'Rodríguez', 35, 1, '98765432', 'Calle C #789', 3),
+('Ana', 'Martínez', 28, 2, '23456789', 'Avenida D #1011', 4),
+('Pedro', 'López', 40, 1, '34567890', 'Calle E #1213', 2);
+
+select * from tb_producto;
