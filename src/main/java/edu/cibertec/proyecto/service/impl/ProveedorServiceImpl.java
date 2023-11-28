@@ -19,6 +19,26 @@ public class ProveedorServiceImpl implements ProveedorService{
 	public List<Proveedor> listarProveedor() {
 		return proRepo.findAll();
 	}
+
+	@Override
+	public Proveedor registrar(Proveedor objProveedor) {
+		return proRepo.save(objProveedor);
+	}
+
+	@Override
+	public Proveedor actualizar(Proveedor objProveedor) {
+		return proRepo.save(objProveedor);
+	}
+
+	@Override
+	public Proveedor obtenerPro(int idpro) {
+		return proRepo.findById(idpro);
+	}
+
+	@Override
+	public void eliminar(Proveedor objProveedor) {
+		proRepo.delete(objProveedor);
+	}
 	
 
 }
