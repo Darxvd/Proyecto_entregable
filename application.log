@@ -1694,3 +1694,28 @@ java.sql.SQLIntegrityConstraintViolationException: Column 'tlf_cliente' cannot b
 2023-11-27T19:25:07.797-05:00  INFO 11728 --- [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-11-27T19:25:07.825-05:00  INFO 11728 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
 2023-11-27T19:25:07.839-05:00  INFO 11728 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2023-11-27T19:25:08.246-05:00  INFO 11728 --- [restartedMain] e.c.proyecto.ProyectoDawiiApplication    : Starting ProyectoDawiiApplication using Java 17.0.7 with PID 11728 (D:\PROYECTO APP WEB II\ProyectoDawII_backend\target\classes started by I202111831 in D:\PROYECTO APP WEB II\ProyectoDawII_backend)
+2023-11-27T19:25:08.247-05:00  INFO 11728 --- [restartedMain] e.c.proyecto.ProyectoDawiiApplication    : No active profile set, falling back to 1 default profile: "default"
+2023-11-27T19:25:10.362-05:00  INFO 11728 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-27T19:25:10.450-05:00  INFO 11728 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 84 ms. Found 7 JPA repository interfaces.
+2023-11-27T19:25:10.781-05:00  INFO 11728 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-27T19:25:10.782-05:00  INFO 11728 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-27T19:25:10.783-05:00  INFO 11728 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2023-11-27T19:25:10.810-05:00  INFO 11728 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-27T19:25:10.811-05:00  INFO 11728 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2556 ms
+2023-11-27T19:25:10.908-05:00  INFO 11728 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2023-11-27T19:25:10.933-05:00  INFO 11728 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@39938174
+2023-11-27T19:25:10.934-05:00  INFO 11728 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2023-11-27T19:25:10.937-05:00  INFO 11728 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-27T19:25:10.956-05:00  INFO 11728 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-27T19:25:11.543-05:00  INFO 11728 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-27T19:25:11.544-05:00  INFO 11728 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-27T19:25:13.336-05:00  WARN 11728 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-27T19:25:13.523-05:00  WARN 11728 --- [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2023-11-27T19:25:13.537-05:00  INFO 11728 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-11-27T19:25:13.557-05:00  INFO 11728 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-27T19:25:13.575-05:00  INFO 11728 --- [restartedMain] e.c.proyecto.ProyectoDawiiApplication    : Started ProyectoDawiiApplication in 5.418 seconds (process running for 6149.863)
+2023-11-27T19:25:13.582-05:00  INFO 11728 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-11-27T19:25:19.374-05:00  INFO 11728 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-27T19:25:19.375-05:00  INFO 11728 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-11-27T19:25:19.376-05:00  INFO 11728 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
