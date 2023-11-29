@@ -2,6 +2,7 @@ package edu.cibertec.proyecto.service;
 
 import java.util.List;
 
+
 import edu.cibertec.proyecto.entity.Empleado;
 
 public interface EmpleadoService {
@@ -15,6 +16,6 @@ public interface EmpleadoService {
 	public Empleado obtenerEmp(int idemp);
 	//ELiminar empleado
 	public void eliminar(Empleado objEmpleado);
-
-
+	
+	public List<Empleado> listarEmpleadoXNombre(String nombre);
 }

@@ -56,4 +56,9 @@ public class ProductoController {
 		servicioProducto.eliminar(producto);
 	}
 	
+	@GetMapping("/listarXcategoria/{id}")
+	public List<Producto> listarxCategoria(@PathVariable int id){
+		return servicioProducto.listarXCategoria(id);
+	}
+	
 }

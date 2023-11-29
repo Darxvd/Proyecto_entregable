@@ -55,4 +55,9 @@ public class ClienteController {
 		servicioCliente.eliminar(cliente);
 	}
 	
+	@GetMapping("/listarClientes/{clientes}")
+	public List<Cliente> listarClientes(@PathVariable String clientes){
+		return servicioCliente.listarClientes(clientes);
+	}
+	
 }

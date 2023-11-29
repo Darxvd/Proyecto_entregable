@@ -40,4 +40,9 @@ public class ClienteServiceImpl implements ClienteService{
 		cliRepo.delete(objCliente);
 	}
 
+	@Override
+	public List<Cliente> listarClientes(String cliente) {
+		return cliRepo.findByCliente(cliente);
+	}
+
 }

@@ -1,8 +1,9 @@
 package edu.cibertec.proyecto.service.impl;
 
+import java.awt.print.Pageable;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import edu.cibertec.proyecto.entity.Empleado;
@@ -39,5 +40,17 @@ public class EmpleadoServiceImpl implements EmpleadoService{
 	public void eliminar(Empleado objEmpleado) {
 		empRepo.delete(objEmpleado);
 	}
-	
+
+	@Override
+	public List<Empleado> listarEmpleadoXNombre(String nombre) {
+		return empRepo.findByNombre(nombre);
+	}
+
 }
+
+
+
+
+
+
+

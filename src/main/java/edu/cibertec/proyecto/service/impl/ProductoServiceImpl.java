@@ -40,4 +40,9 @@ public class ProductoServiceImpl implements ProductoService{
 		prodRepo.delete(objProducto);
 	}
 
+	@Override
+	public List<Producto> listarXCategoria(int id) {
+		return prodRepo.findByCategoria(id);
+	}
+
 }

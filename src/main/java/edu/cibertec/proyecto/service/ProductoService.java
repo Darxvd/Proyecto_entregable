@@ -16,4 +16,6 @@ public interface ProductoService {
 	public Producto obtenerProd(int idprod);
 	//ELiminar producto
 	public void eliminar(Producto objProducto);
+	//Listar por categoria
+	public List<Producto> listarXCategoria(int id);
 }

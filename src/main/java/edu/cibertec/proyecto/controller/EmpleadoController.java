@@ -59,5 +59,11 @@ public class EmpleadoController {
 		Empleado empleado = servicioEmpleado.obtenerEmp(id);
 		servicioEmpleado.eliminar(empleado);
 	}
+	
+	@GetMapping("/listarEmpleadoByNombre/{nombre}")
+	public List<Empleado> listarEmpleadoByEmpleado(@PathVariable String nombre){
+		return servicioEmpleado.listarEmpleadoXNombre(nombre);
+	}
+	
 
 }
